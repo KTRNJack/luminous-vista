@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap 位置（請替換為你的 GitHub Pages 網址）
+Sitemap: https://KTRNJack.github.io/luminous-vista/sitemap.xml
