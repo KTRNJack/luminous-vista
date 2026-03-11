@@ -86,9 +86,12 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .page-hero__bg {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(138, 104, 48,0.12) 0%, transparent 80%);
-  pointer-events: none;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
 }
 .page-hero__content { position: relative; z-index: 1; }
 .page-hero__title {
