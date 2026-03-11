@@ -477,6 +477,15 @@ ul { list-style: none; }
   border: 1px solid var(--clr-glass-border); backdrop-filter: blur(10px);
   box-shadow: var(--shadow-card); transition: all var(--transition); cursor: pointer;
 }
+.about-sec__img-box {
+  width: 100%; max-width: 480px; height: 560px;
+  border-radius: 12rem 12rem 1rem 1rem;
+  background: var(--clr-bg-soft)
+              url('../images/hero.png') center/cover no-repeat;
+  position: relative;
+  box-shadow: 0 20px 40px -8px var(--clr-primary-shadow);
+  transform: translateZ(0);
+}
 .contact-card:hover { background: rgba(138, 104, 48,0.08); border-color: var(--clr-gold); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
 .contact-card__icon { font-size: 1.8rem; color: var(--clr-gold-lt); flex-shrink: 0; width: 36px; }
 .contact-card__info { display: flex; flex-direction: column; flex: 1; }
