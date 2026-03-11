@@ -45,7 +45,7 @@ function buildNavbar() {
           <a href="${page.href}" class="navbar__link${active ? ' active' : ''}" aria-haspopup="true" aria-expanded="false">
             ${page.label} <i class="fa-solid fa-chevron-down navbar__chevron" aria-hidden="true"></i>
           </a>
-          <ul class="dropdown"><div class="dropdown__inner">${subLinks}</div></ul>
+          <div class="dropdown"><ul class="dropdown__inner">${subLinks}</ul></div>
         </li>`;
     }
 
@@ -55,9 +55,12 @@ function buildNavbar() {
   return `
     <nav class="navbar" id="navbar" role="navigation" aria-label="主要導覽">
       <div class="navbar__container">
-        <a href="index.html" class="navbar__logo" aria-label="白光流域首頁">
-          <span class="navbar__logo-zh">白光流域</span>
-          <span class="navbar__logo-en">Luminous Vista</span>
+        <a href="index.html" class="navbar__logo" aria-label="白光流域首頁" style="flex-direction: row; align-items: center; gap: 10px;">
+          <img src="assets/images/Logo.png" alt="Logo" style="height: 40px; width: auto; object-fit: contain;">
+          <div style="display: flex; flex-direction: column;">
+            <span class="navbar__logo-zh">白光流域</span>
+            <span class="navbar__logo-en">Luminous Vista</span>
+          </div>
         </a>
         <button class="navbar__burger" id="navBurger" aria-label="展開選單" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -78,8 +81,13 @@ function buildFooter() {
     <footer class="footer" role="contentinfo">
       <div class="container footer__container">
         <div class="footer__brand">
-          <p class="footer__logo-zh">白光流域</p>
-          <p class="footer__logo-en">Luminous Vista</p>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/images/Logo.png" alt="Logo" style="height: 54px; width: auto;">
+            <div>
+              <p class="footer__logo-zh" style="margin-bottom: 0;">白光流域</p>
+              <p class="footer__logo-en" style="margin-bottom: 0;">Luminous Vista</p>
+            </div>
+          </div>
           <p class="footer__tagline">接引第七次元以上純淨白光<br/>讓這股無條件的愛流動</p>
         </div>
         <nav class="footer__nav" aria-label="頁尾導覽">
@@ -160,7 +168,7 @@ function inject() {
   const navPlaceholder    = document.getElementById('navbar-placeholder');
   const footerPlaceholder = document.getElementById('footer-placeholder');
   const reviewsPlaceholder = document.getElementById('reviews-placeholder');
-  
+
   if (navPlaceholder)    navPlaceholder.outerHTML    = buildNavbar();
   if (footerPlaceholder) footerPlaceholder.outerHTML = buildFooter();
   if (reviewsPlaceholder) reviewsPlaceholder.innerHTML = buildReviews();

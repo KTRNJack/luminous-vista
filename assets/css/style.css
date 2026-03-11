@@ -558,10 +558,19 @@ ul { list-style: none; }
   .navbar__link--cta { text-align: center; justify-content: center; }
 
   /* Mobile dropdown */
+  .dropdown,
+  .navbar__item--dropdown:hover .dropdown,
+  .navbar__item--dropdown.open .dropdown {
+    position: static; transform: none !important; opacity: 1 !important; visibility: visible !important;
+    border: none; backdrop-filter: none; border-radius: 0;
+    pointer-events: auto; padding: 0;
+  }
   .dropdown {
-    position: static; transform: none; opacity: 1 !important; visibility: visible !important;
-    background: rgba(138, 104, 48,0.04); border: none; backdrop-filter: none; padding: 0 0 4px 16px; border-radius: 0;
     max-height: 0; overflow: hidden; transition: max-height var(--transition);
+  }
+  .dropdown__inner {
+    background: transparent; border: none; border-radius: 0;
+    box-shadow: none; backdrop-filter: none; padding: 4px 0 8px 16px; width: 100%;
   }
   .navbar__item--dropdown.open .dropdown { max-height: 200px; }
   .dropdown__link { padding: 8px 16px; }
