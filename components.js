@@ -272,7 +272,7 @@ function initStars(canvasId = 'starCanvas') {
       if (s.x > w) s.x = 0;
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(232,213,163,${Math.max(0, s.alpha)})`;
+      ctx.fillStyle = `rgba(147,116,196,${Math.max(0, s.alpha) * 0.5})`;
       ctx.fill();
     });
     requestAnimationFrame(loop);
