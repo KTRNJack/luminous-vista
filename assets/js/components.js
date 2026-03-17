@@ -247,7 +247,8 @@ function initNavbar() {
   // Mobile dropdown accordion — smooth open/close
   document.querySelectorAll('.navbar__item--dropdown').forEach(item => {
     const toggle = item.querySelector('.navbar__link');
-    toggle?.addEventListener('click', (e) => {
+    if (!toggle) return; // Add null check to prevent errors if toggle is missing
+    toggle.addEventListener('click', (e) => {
       if (window.innerWidth <= 640) {
         e.preventDefault();
         const wasOpen = item.classList.contains('open');
