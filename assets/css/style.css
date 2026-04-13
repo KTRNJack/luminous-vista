@@ -748,3 +748,156 @@ ul { list-style: none; }
   padding-top: 16px;
 }
 
+/* =====================================================
+   TEACHER PROFILE PAGE
+   ===================================================== */
+
+/* Hero */
+.teacher-hero {
+  position: relative;
+  padding-top: calc(var(--nav-height) + 60px);
+  padding-bottom: 80px;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--clr-bg) 50%, var(--clr-bg-soft) 100%);
+}
+.teacher-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(176,138,62,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.teacher-hero__container {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+.teacher-hero__photo-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
+.teacher-hero__glow {
+  position: absolute; width: 380px; height: 380px; border-radius: 50%;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+.star-glow-lg { background: radial-gradient(circle, rgba(176,138,62,0.3) 0%, transparent 70%); }
+.sun-glow-lg  { background: radial-gradient(circle, rgba(232,213,163,0.35) 0%, transparent 70%); }
+.teacher-hero__photo {
+  width: 320px; height: 420px;
+  border-radius: 160px 160px 24px 24px;
+  object-fit: cover; object-position: top center;
+  border: 2px solid var(--clr-glass-border);
+  box-shadow: 0 24px 60px rgba(138,104,48,0.2);
+  position: relative; z-index: 1;
+}
+.teacher-hero__photo-placeholder {
+  width: 320px; height: 420px;
+  border-radius: 160px 160px 24px 24px;
+  background: linear-gradient(160deg, rgba(176,138,62,0.15) 0%, rgba(138,104,48,0.07) 100%);
+  border: 2px solid var(--clr-glass-border);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 16px;
+  position: relative; z-index: 1;
+}
+.teacher-hero__photo-placeholder i { font-size: 5rem; color: var(--clr-gold); opacity: 0.5; }
+.teacher-hero__photo-placeholder span { font-size: 0.8rem; color: var(--clr-text-muted); letter-spacing: 0.1em; }
+.teacher-hero__content { display: flex; flex-direction: column; gap: 20px; }
+.teacher-hero__label { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--clr-gold); }
+.teacher-hero__name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700;
+  color: var(--clr-gold-lt); line-height: 1.15;
+  text-shadow: 0 4px 24px rgba(138,104,48,0.15);
+}
+.teacher-hero__title { font-size: 1rem; color: var(--clr-text-muted); letter-spacing: 0.05em; }
+.teacher-hero__tagline {
+  font-family: var(--font-serif); font-size: 1.1rem;
+  color: var(--clr-text); line-height: 1.9;
+  padding: 20px 24px;
+  border-left: 3px solid var(--clr-gold);
+  background: rgba(176,138,62,0.05);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.teacher-hero__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.teacher-hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+
+/* Bio / Journey */
+.teacher-bio { background: var(--clr-bg-soft); }
+.teacher-bio__container {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.teacher-bio__orb {
+  aspect-ratio: 1; max-width: 320px; margin-inline: auto; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(176,138,62,0.18) 0%, rgba(138,104,48,0.06) 50%, transparent 100%);
+  border: 1px solid rgba(138,104,48,0.2);
+  display: flex; align-items: center; justify-content: center;
+  animation: orbFloat 6s ease-in-out infinite;
+}
+.teacher-bio__orb-inner {
+  width: 70%; height: 70%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(176,138,62,0.1) 0%, transparent 70%);
+  border: 1px solid rgba(176,138,62,0.15);
+  display: flex; align-items: center; justify-content: center;
+  animation: orbInnerPulse 4s ease-in-out infinite;
+}
+.teacher-bio__orb-icon { font-size: 3rem; color: var(--clr-gold); opacity: 0.6; }
+.teacher-bio__text { display: flex; flex-direction: column; gap: 16px; }
+.teacher-bio__body { font-size: 0.95rem; color: var(--clr-text-muted); line-height: 2; }
+
+/* Signature Services */
+.teacher-services { background: var(--clr-bg); }
+.teacher-services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+/* Certifications */
+.teacher-certs { background: var(--clr-bg-soft); }
+.teacher-certs__container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.teacher-certs__list { display: flex; flex-direction: column; gap: 12px; }
+.teacher-certs__item {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px;
+  background: var(--clr-glass-bg);
+  border: 1px solid var(--clr-glass-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.teacher-certs__item:hover { transform: translateX(4px); box-shadow: var(--shadow-card); }
+.teacher-certs__icon { color: var(--clr-gold); font-size: 1rem; flex-shrink: 0; margin-top: 3px; }
+.teacher-certs__name { font-size: 0.88rem; color: var(--clr-text); font-weight: 500; }
+.teacher-certs__sub { font-size: 0.75rem; color: var(--clr-text-muted); margin-top: 2px; }
+
+/* Testimonials */
+.teacher-reviews { background: var(--clr-bg); }
+.teacher-reviews__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin-inline: auto; }
+
+/* Booking CTA */
+.teacher-booking {
+  background: linear-gradient(160deg, var(--clr-bg-soft) 0%, var(--clr-bg) 100%);
+  text-align: center; position: relative; overflow: hidden;
+}
+.teacher-booking::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(176,138,62,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.teacher-booking__inner { position: relative; z-index: 1; max-width: 640px; margin-inline: auto; }
+.teacher-booking__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--clr-gold-lt); margin-bottom: 16px;
+}
+.teacher-booking__body { font-size: 0.95rem; color: var(--clr-text-muted); line-height: 1.9; margin-bottom: 36px; }
+.teacher-booking__actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .teacher-hero__container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .teacher-hero__photo-wrap { order: -1; }
+  .teacher-hero__photo, .teacher-hero__photo-placeholder { width: 240px; height: 320px; border-radius: 120px 120px 18px 18px; }
+  .teacher-hero__glow { width: 280px; height: 280px; }
+  .teacher-hero__actions { justify-content: center; }
+  .teacher-hero__tags { justify-content: center; }
+  .teacher-bio__container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .teacher-certs__container { grid-template-columns: 1fr; gap: 40px; }
+  .teacher-services__grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+  .teacher-reviews__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .teacher-services__grid { grid-template-columns: 1fr; }
+}
