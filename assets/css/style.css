@@ -177,7 +177,7 @@ ul { list-style: none; }
 
 /* Dropdown */
 .dropdown {
-  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  position: absolute; top: 100%; left: 50%;
   padding-top: 8px; /* bridge gap — DO NOT remove, keeps hover area continuous */
   background: transparent;
   border: none;
@@ -426,7 +426,19 @@ ul { list-style: none; }
 /* =====================================================
    Team (index page)
    ===================================================== */
-.team__grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 32px; max-width: 900px; margin-inline: auto; }
+/* 5-teacher layout: founders in 2-up row, members in 3-up row */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 32px;
+  max-width: 1140px;
+  margin-inline: auto;
+}
+.team__grid > .team-card:nth-child(1),
+.team__grid > .team-card:nth-child(2) { grid-column: span 3; }
+.team__grid > .team-card:nth-child(3),
+.team__grid > .team-card:nth-child(4),
+.team__grid > .team-card:nth-child(5) { grid-column: span 2; }
 .team-card {
   background: var(--clr-glass-bg); border: 1px solid var(--clr-glass-border);
   border-radius: var(--radius-lg); padding: 40px 32px;
@@ -524,22 +536,27 @@ ul { list-style: none; }
    Teaser Gallery (Marquee)
    ===================================================== */
 .teaser-gallery { overflow: hidden; background: var(--clr-bg); }
+
+/* Gradient masks live here — spans viewport width so fades are at screen edges */
+.marquee-track {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.marquee-track::before,
+.marquee-track::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 10vw; z-index: 2; pointer-events: none;
+}
+.marquee-track::before {
+  left: 0; background: linear-gradient(to right, var(--clr-bg) 0%, transparent 100%);
+}
+.marquee-track::after {
+  right: 0; background: linear-gradient(to left, var(--clr-bg) 0%, transparent 100%);
+}
+
 .marquee-wrapper {
   display: flex;
   width: max-content;
-  overflow: hidden;
-  position: relative;
-}
-/* Gradient masks for smooth fade in/out at the edges */
-.marquee-wrapper::before,
-.marquee-wrapper::after {
-  content: ''; position: absolute; top: 0; bottom: 0; width: 10vw; z-index: 2; pointer-events: none;
-}
-.marquee-wrapper::before {
-  left: 0; background: linear-gradient(to right, var(--clr-bg) 0%, transparent 100%);
-}
-.marquee-wrapper::after {
-  right: 0; background: linear-gradient(to left, var(--clr-bg) 0%, transparent 100%);
 }
 
 .marquee-content {
@@ -639,7 +656,8 @@ ul { list-style: none; }
   .courses-grid       { grid-template-columns: 1fr; }
   .mission__container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
   .mission__orb       { max-width: 280px; }
-  .team__grid         { grid-template-columns: 1fr; max-width: 460px; }
+  .team__grid         { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
+  .team__grid > .team-card { grid-column: span 1 !important; }
   .footer__container  { grid-template-columns: 1fr; gap: 40px; }
   .footer__nav        { grid-template-columns: repeat(3,1fr); }
 }
@@ -686,6 +704,7 @@ ul { list-style: none; }
   .products-grid--2 { grid-template-columns: 1fr; }
   .reviews-grid     { grid-template-columns: 1fr; }
   .contact__grid    { grid-template-columns: 1fr; }
+  .team__grid       { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
   .footer__nav      { grid-template-columns: 1fr 1fr; }
   .footer__bottom   { flex-direction: column; align-items: flex-start; }
 }
@@ -931,6 +950,128 @@ ul { list-style: none; }
 }
 @media (max-width: 640px) {
   .teacher-services__grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================
+   State Flow Section (狀態分流區)
+   ===================================================== */
+.state-flow { background: var(--clr-bg-soft); }
+.state-flow__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1140px;
+  margin-inline: auto;
+}
+.state-flow-card {
+  background: var(--clr-glass-bg);
+  border: 1.5px solid var(--clr-glass-border);
+  border-radius: var(--radius-xl);
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  text-decoration: none;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.state-flow-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--clr-gold);
+}
+.state-flow-card__icon { font-size: 2.4rem; color: var(--clr-gold-lt); }
+.state-flow-card__label {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--clr-gold-lt);
+  font-weight: 600;
+}
+.state-flow-card__who {
+  font-size: 0.75rem; color: var(--clr-gold); letter-spacing: 0.08em;
+  padding: 3px 12px;
+  background: rgba(138,104,48,0.08);
+  border: 1px solid rgba(138,104,48,0.2);
+  border-radius: 100px;
+}
+.state-flow-card__desc {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  line-height: 1.85;
+  flex: 1;
+}
+@media (max-width: 900px) {
+  .state-flow__grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .state-flow__grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+}
+
+/* =====================================================
+   Final CTA Section
+   ===================================================== */
+.final-cta {
+  background: linear-gradient(160deg, var(--clr-bg-soft) 0%, var(--clr-bg) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(176,138,62,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta__inner { position: relative; z-index: 1; max-width: 600px; margin-inline: auto; }
+.final-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--clr-gold-lt);
+  margin-bottom: 12px;
+}
+.final-cta__body {
+  font-size: 0.95rem; color: var(--clr-text-muted); margin-bottom: 32px; line-height: 1.9;
+}
+.final-cta__actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* =====================================================
+   Resonance Box (teacher pages)
+   ===================================================== */
+.resonance-box {
+  background: rgba(138,104,48,0.05);
+  border-left: 3px solid var(--clr-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+.resonance-box__lead {
+  font-size: 0.82rem; color: var(--clr-text-muted); font-weight: 500;
+  margin-bottom: 10px; letter-spacing: 0.05em;
+}
+.resonance-box__list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.resonance-box__list li {
+  font-size: 0.88rem; color: var(--clr-text-muted);
+  padding-left: 20px; position: relative; line-height: 1.7;
+}
+.resonance-box__list li::before {
+  content: '✦'; position: absolute; left: 0;
+  color: var(--clr-gold); font-size: 0.55rem; top: 6px;
+}
+
+/* Teacher "不確定哪一位" footer nudge */
+.teacher-unsure {
+  background: var(--clr-bg-soft);
+  padding-block: 48px;
+  text-align: center;
+}
+.teacher-unsure__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem; color: var(--clr-gold-lt); margin-bottom: 8px;
+}
+.teacher-unsure__body {
+  font-size: 0.9rem; color: var(--clr-text-muted); line-height: 1.9; margin-bottom: 24px;
 }
 
 /* =====================================================

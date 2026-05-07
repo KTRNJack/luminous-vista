@@ -182,6 +182,7 @@ function inject() {
   initReveal();
   initLoading();
   initBackToTop();
+  initContactTracking();
 }
 
 /* --- Loading Screen 邏輯 ------------------------------- */
@@ -311,6 +312,30 @@ function initStars(canvasId = 'starCanvas') {
   resize();
   stars = Array.from({ length: 200 }, createStar);
   loop();
+}
+
+/* --- GA4 聯絡 / 預約點擊追蹤 --------------------------- */
+function initContactTracking() {
+  if (typeof gtag !== 'function') return;
+
+  document.querySelectorAll(
+    'a[href*="line.me"], a[href*="instagram.com"], a[href*="facebook.com"], a[href^="mailto:"]'
+  ).forEach(link => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      let platform = 'other';
+      if      (href.includes('line.me'))       platform = 'LINE';
+      else if (href.includes('instagram.com')) platform = 'Instagram';
+      else if (href.includes('facebook.com'))  platform = 'Facebook';
+      else if (href.startsWith('mailto:'))     platform = 'Email';
+
+      gtag('event', 'contact_click', {
+        platform,
+        link_text: (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 50),
+        page_path: window.location.pathname,
+      });
+    });
+  });
 }
 
 /* --- 執行 --------------------------------------------- */
