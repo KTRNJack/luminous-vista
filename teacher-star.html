@@ -110,6 +110,16 @@
         <a href="#booking" class="btn btn--primary" style="margin-top:24px;">
           與星星老師預約 <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <!-- 公式照 — 請將圖片放至 assets/images/teacher-star-formal.jpg -->
+        <div class="teacher-formal-wrap" style="margin-top:28px;">
+          <img src="assets/images/teacher-star-formal.jpg" alt="星星老師公式照"
+               class="teacher-formal-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="teacher-formal-placeholder" style="display:none;">
+            <i class="fa-solid fa-image"></i>
+            <span>公式照（請上傳 teacher-star-formal.jpg）</span>
+          </div>
+        </div>
       </div>
       <!-- Right: Certifications -->
       <div class="reveal">
@@ -166,7 +176,9 @@
       <p class="section__subtitle">從塔羅占卜到多元靈氣療癒，找到最適合你現在的能量支持。</p>
     </div>
     <div class="teacher-services__grid">
-      <article class="card reveal">
+
+      <!-- 入口一：塔羅・占卜 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-moon card__icon"></i></div>
         <h3 class="card__title">塔羅 ・ 占卜</h3>
         <p class="card__text">透過塔羅牌與神諭卡的提點，看見當下的能量狀態，為你的選擇提供清明的指引。</p>
@@ -175,9 +187,40 @@
           <li>神諭卡能量解讀</li>
           <li>人生方向諮詢</li>
         </ul>
-        <a href="services.html#divination" class="card__link">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">塔羅牌卡占卜</span>
+                <span class="service-subtier-item__desc">單一或複合主題牌陣，解讀當下能量與方向</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">神諭卡能量解讀</span>
+                <span class="service-subtier-item__desc">連結神諭卡的訊息，帶來靈性層面的指引與提醒</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">人生方向諮詢</span>
+                <span class="service-subtier-item__desc">結合塔羅與能量洞察，協助釐清方向與下一步</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="services.html#divination" class="card__link" style="margin-top:12px;">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口二：多元靈氣療癒 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-hands-holding card__icon"></i></div>
         <h3 class="card__title">多元靈氣療癒</h3>
         <p class="card__text">結合多個靈氣體系的深度療癒，針對原生家庭、金錢豐盛、情感關係、內在小孩等主題。</p>
@@ -186,9 +229,47 @@
           <li>古埃及靈氣 / 龍吟靈氣</li>
           <li>如願 / 金錢 / 富裕靈氣</li>
         </ul>
-        <a href="services.html#reiki" class="card__link">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">英國天使靈氣</span>
+                <span class="service-subtier-item__desc">以天使之光清理深層阻礙，適合情感、原生家庭、內在小孩主題</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">獨角獸靈氣</span>
+                <span class="service-subtier-item__desc">純淨的獨角獸能量，適合靈性提升與能量淨化</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">古埃及靈氣 / 龍吟靈氣</span>
+                <span class="service-subtier-item__desc">深層能量轉化，適合人生轉折期或強烈卡點</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">如願 / 金錢 / 富裕靈氣</span>
+                <span class="service-subtier-item__desc">開啟豐盛頻率，吸引金錢能量與顯化</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="services.html#reiki" class="card__link" style="margin-top:12px;">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口三：魔法商品・儀式 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-wand-sparkles card__icon"></i></div>
         <h3 class="card__title">魔法商品 ・ 儀式</h3>
         <p class="card__text">精心製作的靈氣蠟燭、魔法噴霧、魔法油，以及客製化儀式服務。</p>
@@ -197,8 +278,45 @@
           <li>魔法噴霧 / 靈氣噴霧</li>
           <li>客製化魔法儀式</li>
         </ul>
-        <a href="products-magic.html" class="card__link">查看商品 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">靈氣魔法蠟燭</span>
+                <span class="service-subtier-item__desc">淨化、希望之淚、突破困境、招財、愛情、智慧等多款</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">魔法噴霧 / 靈氣噴霧</span>
+                <span class="service-subtier-item__desc">豐盛瀑布等能量噴霧，隨時為空間注入能量</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">月相香水</span>
+                <span class="service-subtier-item__desc">新月、滿月等月相能量香水，配合月週期使用</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">客製化魔法儀式</span>
+                <span class="service-subtier-item__desc">依個人需求設計的專屬能量儀式服務</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="products-magic.html" class="card__link" style="margin-top:12px;">查看商品 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
+
     </div>
   </div>
 </section>

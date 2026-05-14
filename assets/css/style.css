@@ -1295,6 +1295,111 @@ ul { list-style: none; }
   flex-wrap: wrap;
 }
 
+/* =====================================================
+   Course Level Path — 學習路徑階段標籤
+   ===================================================== */
+.course-level-path {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 5px;
+  margin: 12px 0 6px;
+}
+.course-level-badge {
+  font-size: 0.69rem; padding: 3px 11px; border-radius: 20px;
+  background: rgba(138,104,48,0.1); border: 1px solid rgba(138,104,48,0.25);
+  color: var(--clr-gold); white-space: nowrap; font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+.course-level-badge--combo {
+  background: rgba(123,94,167,0.12); border-color: rgba(123,94,167,0.3);
+  color: #c4aff0;
+}
+.course-level-arrow {
+  font-size: 0.6rem; color: rgba(138,104,48,0.4); flex-shrink: 0;
+}
+
+/* =====================================================
+   Product Filter Bar — 商品篩選列（參考光學院）
+   ===================================================== */
+.product-filter-bar {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 40px; justify-content: center;
+}
+.product-filter-btn {
+  padding: 8px 22px; border-radius: 30px;
+  border: 1px solid rgba(138,104,48,0.3);
+  background: transparent; color: var(--clr-gold);
+  font-size: 0.83rem; font-family: var(--font-sans);
+  cursor: pointer; transition: all var(--transition);
+  letter-spacing: 0.04em;
+}
+.product-filter-btn:hover {
+  background: rgba(138,104,48,0.1); border-color: rgba(138,104,48,0.5);
+}
+.product-filter-btn.active {
+  background: rgba(138,104,48,0.18); border-color: var(--clr-gold);
+  color: var(--clr-gold-lt); font-weight: 600;
+}
+.product-feature.hidden-by-filter { display: none !important; }
+
+/* =====================================================
+   Service Card Accordion — 老師服務展開分層
+   ===================================================== */
+.service-card-accordion { cursor: default; }
+.service-card-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; padding-top: 14px; margin-top: 12px;
+  border-top: 1px solid rgba(138,104,48,0.2);
+  cursor: pointer; user-select: none;
+}
+.service-card-toggle-label {
+  font-size: 0.75rem; color: var(--clr-gold); letter-spacing: 0.06em;
+}
+.service-card-chevron {
+  font-size: 0.68rem; color: var(--clr-gold);
+  transition: transform var(--transition); flex-shrink: 0;
+}
+.service-card-accordion.is-open .service-card-chevron { transform: rotate(180deg); }
+.service-card-subtiers {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.service-card-accordion.is-open .service-card-subtiers { max-height: 600px; }
+.service-subtier-list {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 14px 0 4px;
+}
+.service-subtier-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: rgba(138,104,48,0.05); border: 1px solid rgba(138,104,48,0.15);
+  border-radius: 8px; padding: 11px 14px;
+}
+.service-subtier-item__dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--clr-gold); flex-shrink: 0; margin-top: 7px;
+}
+.service-subtier-item__content { display: flex; flex-direction: column; gap: 2px; }
+.service-subtier-item__name { font-size: 0.83rem; font-weight: 500; color: var(--clr-gold-lt); }
+.service-subtier-item__desc { font-size: 0.76rem; color: var(--clr-text-muted); line-height: 1.6; }
+
+/* =====================================================
+   Teacher Formal Photo — 公式照
+   ===================================================== */
+.teacher-formal-wrap {
+  display: flex; justify-content: center; margin-top: 32px;
+}
+.teacher-formal-photo {
+  max-width: 520px; width: 100%; border-radius: var(--radius-lg);
+  border: 1px solid rgba(138,104,48,0.2); box-shadow: var(--shadow-glow);
+  object-fit: cover; display: block;
+}
+.teacher-formal-placeholder {
+  width: 100%; max-width: 520px; height: 260px;
+  background: var(--clr-glass-bg); border: 2px dashed rgba(138,104,48,0.2);
+  border-radius: var(--radius-lg); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  color: var(--clr-text-muted); font-size: 0.82rem;
+}
+.teacher-formal-placeholder i { font-size: 1.8rem; color: var(--clr-gold); opacity: 0.35; }
+
 @media (max-width: 900px) {
   .product-feature {
     padding: 32px 24px;

@@ -98,6 +98,16 @@
         <a href="#booking" class="btn btn--primary" style="margin-top:24px;">
           與 Aurore 預約 <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <!-- 公式照 — 請將圖片放至 assets/images/teacher-aurore-formal.jpg -->
+        <div class="teacher-formal-wrap" style="margin-top:28px;">
+          <img src="assets/images/teacher-aurore-formal.jpg" alt="Aurore 公式照"
+               class="teacher-formal-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="teacher-formal-placeholder" style="display:none;">
+            <i class="fa-solid fa-image"></i>
+            <span>公式照（請上傳 teacher-aurore-formal.jpg）</span>
+          </div>
+        </div>
       </div>
       <div class="reveal">
         <p class="section__eyebrow" style="margin-bottom:14px;">專業資歷</p>
@@ -138,7 +148,9 @@
       <p class="section__subtitle">從情緒、身體到能量，找到最適合你現在的療癒支持。</p>
     </div>
     <div class="teacher-services__grid">
-      <article class="card reveal">
+
+      <!-- 入口一：情緒・壓力療癒 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-heart-pulse card__icon"></i></div>
         <h3 class="card__title">情緒 ・ 壓力療癒</h3>
         <p class="card__text">針對情緒低落、壓力累積與內在疲憊，創造一個安全的空間，讓你能好好被接住。</p>
@@ -147,9 +159,40 @@
           <li>壓力根源探索</li>
           <li>內在空間重建</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">情緒整合與釋放</span>
+                <span class="service-subtier-item__desc">在安全的容器中，讓累積的情緒被看見、被理解、被釋放</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">壓力根源探索</span>
+                <span class="service-subtier-item__desc">找出壓力真正來自哪裡，而不只是緩解表面症狀</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">內在空間重建</span>
+                <span class="service-subtier-item__desc">逐步建立一個讓自己可以安住的內在基礎</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口二：獨角獸靈氣療癒 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-leaf card__icon"></i></div>
         <h3 class="card__title">獨角獸靈氣療癒</h3>
         <p class="card__text">以獨角獸靈氣的純淨能量，為你的身心靈進行溫柔的淨化，恢復自然的平衡狀態。</p>
@@ -158,9 +201,40 @@
           <li>脈輪能量平衡</li>
           <li>遠距靈氣療癒</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">獨角獸靈氣療癒</span>
+                <span class="service-subtier-item__desc">純淨的獨角獸能量，溫柔清理身心靈的阻礙與疲憊</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">脈輪能量平衡</span>
+                <span class="service-subtier-item__desc">針對七大脈輪進行能量評估與平衡，恢復整體流動</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">遠距靈氣療癒</span>
+                <span class="service-subtier-item__desc">不受距離限制，在家即可接收完整療癒</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口三：生活狀態調整 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-seedling card__icon"></i></div>
         <h3 class="card__title">生活狀態調整</h3>
         <p class="card__text">結合營養師專業，從飲食、作息與生活習慣出發，陪你找到真正讓身心舒適的生活節奏。</p>
@@ -169,8 +243,38 @@
           <li>飲食與能量狀態</li>
           <li>生活節奏調整</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">身心整合評估</span>
+                <span class="service-subtier-item__desc">結合能量狀態與營養師專業，全面了解目前的身心狀況</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">飲食與能量狀態</span>
+                <span class="service-subtier-item__desc">從飲食習慣切入，調整影響情緒與能量的生活模式</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">生活節奏調整</span>
+                <span class="service-subtier-item__desc">找到真正讓自己舒適、可以持續的生活方式</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
+
     </div>
   </div>
 </section>

@@ -103,6 +103,16 @@
         <a href="#booking" class="btn btn--primary" style="margin-top:24px;">
           與太陽老師預約 <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <!-- 公式照 — 請將圖片放至 assets/images/teacher-sun-formal.jpg -->
+        <div class="teacher-formal-wrap" style="margin-top:28px;">
+          <img src="assets/images/teacher-sun-formal.jpg" alt="太陽老師公式照"
+               class="teacher-formal-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="teacher-formal-placeholder" style="display:none;">
+            <i class="fa-solid fa-image"></i>
+            <span>公式照（請上傳 teacher-sun-formal.jpg）</span>
+          </div>
+        </div>
       </div>
       <!-- Right: Certifications -->
       <div class="reveal">
@@ -166,7 +176,9 @@
       <p class="section__subtitle">以溫暖的陽光能量，連結你與毛孩、你與神靈之間最深的靈魂訊息。</p>
     </div>
     <div class="teacher-services__grid">
-      <article class="card reveal">
+
+      <!-- 入口一：動物溝通 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-paw card__icon"></i></div>
         <h3 class="card__title">動物溝通</h3>
         <p class="card__text">透過心靈感知連接你的毛孩，理解他們的想法、情緒與身體感受，幫助你們更深入地理解彼此。</p>
@@ -175,9 +187,40 @@
           <li>彩虹橋毛孩溝通</li>
           <li>行為 / 情緒問題協助</li>
         </ul>
-        <a href="services.html" class="card__link">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">在世毛孩溝通</span>
+                <span class="service-subtier-item__desc">了解毛孩的想法、情緒與身體狀態，增進彼此理解</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">彩虹橋毛孩溝通</span>
+                <span class="service-subtier-item__desc">連結已過橋的毛孩，傳遞牠們的最後訊息與祝福</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">行為 / 情緒問題協助</span>
+                <span class="service-subtier-item__desc">從毛孩視角理解行為背後的原因，找到溫柔的解方</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="services.html" class="card__link" style="margin-top:12px;">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口二：靈氣療癒 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-hands-holding card__icon"></i></div>
         <h3 class="card__title">靈氣療癒</h3>
         <p class="card__text">以英國天使靈氣與臼井靈氣，為你的身心靈進行深層的淨化與補充，恢復自然流動的豐盛能量場。</p>
@@ -186,9 +229,40 @@
           <li>臼井靈氣療癒</li>
           <li>遠距靈氣療癒</li>
         </ul>
-        <a href="services.html#reiki" class="card__link">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">英國天使靈氣</span>
+                <span class="service-subtier-item__desc">以天使之光進行深層療癒，清理情緒與身心靈障礙</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">臼井靈氣療癒</span>
+                <span class="service-subtier-item__desc">傳統靈氣療法，補充生命能量，恢復自然平衡</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">遠距靈氣療癒</span>
+                <span class="service-subtier-item__desc">不受距離限制，在家即可接收完整的靈氣療癒能量</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="services.html#reiki" class="card__link" style="margin-top:12px;">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口三：神明溝通・占卜 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-torii-gate card__icon"></i></div>
         <h3 class="card__title">神明溝通 ・ 占卜</h3>
         <p class="card__text">連結神靈的能量場，傳遞來自神明的指引、祝福或提醒。也提供塔羅與神諭卡占卜服務。</p>
@@ -197,8 +271,38 @@
           <li>塔羅牌占卜</li>
           <li>神諭卡能量解讀</li>
         </ul>
-        <a href="services.html" class="card__link">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">神明溝通</span>
+                <span class="service-subtier-item__desc">傳遞神明的指引、祝福或提醒，感受神明的守護</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">祖先溝通</span>
+                <span class="service-subtier-item__desc">連結祖先的能量，接收來自家族線的訊息與祝福</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">偉特塔羅占卜</span>
+                <span class="service-subtier-item__desc">結合塔羅牌與神諭卡，看見當下能量與方向指引</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="services.html" class="card__link" style="margin-top:12px;">了解更多 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
+
     </div>
   </div>
 </section>

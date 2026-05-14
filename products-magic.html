@@ -47,10 +47,19 @@
 
 <section class="section" style="background:var(--clr-bg-soft);">
   <div class="container">
+
+    <!-- 篩選列 -->
+    <div class="product-filter-bar">
+      <button class="product-filter-btn active" data-filter="all">全部</button>
+      <button class="product-filter-btn" data-filter="candle">魔法蠟燭</button>
+      <button class="product-filter-btn" data-filter="spray">魔法噴霧</button>
+      <button class="product-filter-btn" data-filter="perfume">月相香水</button>
+    </div>
+
     <div class="products-showcase">
 
       <!-- 淨化魔法蠟燭 -->
-      <article class="product-feature reveal" id="candle-purify">
+      <article class="product-feature reveal" id="candle-purify" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/purify.png" alt="淨化魔法蠟燭" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -73,7 +82,7 @@
       </article>
 
       <!-- 希望之淚 -->
-      <article class="product-feature reveal" id="candle-hope">
+      <article class="product-feature reveal" id="candle-hope" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/hope.png" alt="希望之淚" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -96,7 +105,7 @@
       </article>
 
       <!-- 豐盛瀑布 -->
-      <article class="product-feature reveal" id="spray-abundance">
+      <article class="product-feature reveal" id="spray-abundance" data-category="spray">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/abundance.png" alt="豐盛瀑布" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -116,7 +125,7 @@
       </article>
 
       <!-- 突破困境 -->
-      <article class="product-feature reveal" id="candle-breakthrough">
+      <article class="product-feature reveal" id="candle-breakthrough" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/breakthrough.png" alt="突破困境" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -138,7 +147,7 @@
         </div>
       </article>
       <!-- 智慧魔法蠟燭 -->
-      <article class="product-feature reveal" id="candle-wisdom">
+      <article class="product-feature reveal" id="candle-wisdom" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/wisdom.png" alt="智慧魔法蠟燭" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -161,7 +170,7 @@
       </article>
 
       <!-- 愛情魔法蠟燭 -->
-      <article class="product-feature reveal" id="candle-love">
+      <article class="product-feature reveal" id="candle-love" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/love.png" alt="愛情魔法蠟燭" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -184,7 +193,7 @@
       </article>
 
       <!-- 招財魔法蠟燭 -->
-      <article class="product-feature reveal" id="candle-wealth">
+      <article class="product-feature reveal" id="candle-wealth" data-category="candle">
         <div class="product-feature__img-wrap">
           <img src="assets/images/products/wealth.png" alt="招財魔法蠟燭" class="product-feature__img" onerror="this.style.opacity='0.5';">
         </div>
@@ -201,6 +210,52 @@
             </a>
             <a href="https://myship.7-11.com.tw/general/detail/GM2508113057795" target="_blank" rel="noopener" class="btn btn--buy">
               <i class="fa-solid fa-cart-shopping"></i> 立即購買
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 月相香水：新月 -->
+      <article class="product-feature reveal" id="perfume-new-moon" data-category="perfume">
+        <div class="product-feature__img-wrap">
+          <img src="assets/images/products/perfume-new-moon.jpg" alt="新月香水" class="product-feature__img" onerror="this.style.opacity='0.5';">
+        </div>
+        <div class="product-feature__content">
+          <span class="product-feature__badge">月相香水系列</span>
+          <h2 class="product-feature__title">新月<span style="font-size:0.6em;">月相香水</span></h2>
+          <p class="product-feature__subtitle">重新開始 × 設定意圖 × 播下種子</p>
+          <p class="product-feature__desc">
+            新月是最適合設定新意圖的時刻。以清新而深邃的香氣，陪伴你在黑暗中點燃新的願望，讓一切從這一刻重新開始。
+          </p>
+          <div class="product-feature__footer">
+            <a href="https://forms.gle/erpeJeGzTTkDiW2dA" target="_blank" rel="noopener" class="btn btn--contact">
+              <i class="fa-solid fa-circle-info"></i> 看更多介紹
+            </a>
+            <a href="https://line.me/R/ti/p/@tye7794w" target="_blank" rel="noopener" class="btn btn--buy">
+              <i class="fa-brands fa-line"></i> LINE 詢購
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 月相香水：滿月 -->
+      <article class="product-feature reveal" id="perfume-full-moon" data-category="perfume">
+        <div class="product-feature__img-wrap">
+          <img src="assets/images/products/perfume-full-moon.jpg" alt="滿月香水" class="product-feature__img" onerror="this.style.opacity='0.5';">
+        </div>
+        <div class="product-feature__content">
+          <span class="product-feature__badge">月相香水系列</span>
+          <h2 class="product-feature__title">滿月<span style="font-size:0.6em;">月相香水</span></h2>
+          <p class="product-feature__subtitle">圓滿完成 × 釋放與感恩 × 能量巔峰</p>
+          <p class="product-feature__desc">
+            滿月的能量最為飽滿強大，適合完成、釋放與感恩。豐盈而溫暖的香氣，讓你在能量高峰時刻充分吸收宇宙的豐盛共振。
+          </p>
+          <div class="product-feature__footer">
+            <a href="https://forms.gle/erpeJeGzTTkDiW2dA" target="_blank" rel="noopener" class="btn btn--contact">
+              <i class="fa-solid fa-circle-info"></i> 看更多介紹
+            </a>
+            <a href="https://line.me/R/ti/p/@tye7794w" target="_blank" rel="noopener" class="btn btn--buy">
+              <i class="fa-brands fa-line"></i> LINE 詢購
             </a>
           </div>
         </div>
@@ -226,5 +281,25 @@
 
 <div id="footer-placeholder"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function () {
+  const btns = document.querySelectorAll('.product-filter-btn');
+  const items = document.querySelectorAll('.product-feature[data-category]');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      items.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.classList.remove('hidden-by-filter');
+        } else {
+          item.classList.add('hidden-by-filter');
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>

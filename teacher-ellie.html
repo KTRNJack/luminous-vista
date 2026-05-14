@@ -96,6 +96,16 @@
         <a href="#booking" class="btn btn--primary" style="margin-top:24px;">
           與 Ellie 預約 <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <!-- 公式照 — 請將圖片放至 assets/images/teacher-ellie-formal.jpg -->
+        <div class="teacher-formal-wrap" style="margin-top:28px;">
+          <img src="assets/images/teacher-ellie-formal.jpg" alt="Ellie 公式照"
+               class="teacher-formal-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="teacher-formal-placeholder" style="display:none;">
+            <i class="fa-solid fa-image"></i>
+            <span>公式照（請上傳 teacher-ellie-formal.jpg）</span>
+          </div>
+        </div>
       </div>
       <div class="reveal">
         <p class="section__eyebrow" style="margin-bottom:14px;">專業資歷</p>
@@ -143,7 +153,9 @@
       <p class="section__subtitle">看懂自己，才能做出真正屬於你的選擇。</p>
     </div>
     <div class="teacher-services__grid">
-      <article class="card reveal">
+
+      <!-- 入口一：塔羅占卜 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-moon card__icon"></i></div>
         <h3 class="card__title">塔羅占卜</h3>
         <p class="card__text">透過塔羅的視角，看見當下的能量狀態與可能方向，幫你在困惑中找到清晰的切入點。</p>
@@ -152,9 +164,40 @@
           <li>選擇方向分析</li>
           <li>人際關係解讀</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">現況與能量解讀</span>
+                <span class="service-subtier-item__desc">看見當下的能量狀態，理解目前所在的位置</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">選擇方向分析</span>
+                <span class="service-subtier-item__desc">面臨選擇時，透過牌卡看見各方向的能量走向</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">人際關係解讀</span>
+                <span class="service-subtier-item__desc">看見關係中的能量動態，理解彼此的狀態與模式</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口二：姓名學解析 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-signature card__icon"></i></div>
         <h3 class="card__title">姓名學解析</h3>
         <p class="card__text">透過姓名的結構分析，理解你與生俱來的天賦設計、個性模式，以及人生各階段的能量走向。</p>
@@ -163,9 +206,40 @@
           <li>天賦與個性分析</li>
           <li>人生週期能量</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">姓名五格完整解析</span>
+                <span class="service-subtier-item__desc">天格、地格、人格、總格、外格全面解讀</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">天賦與個性分析</span>
+                <span class="service-subtier-item__desc">透過姓名看見你的先天優勢與個性特質設計</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">人生週期能量</span>
+                <span class="service-subtier-item__desc">了解各人生階段的能量走向，在對的時間做對的事</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口三：模式解析諮詢 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-magnifying-glass card__icon"></i></div>
         <h3 class="card__title">模式解析諮詢</h3>
         <p class="card__text">結合命理與塔羅，深入解析你重複遇到的問題背後的模式，讓理解真正落地、能夠運用。</p>
@@ -174,8 +248,38 @@
           <li>反覆困境根源</li>
           <li>清晰決策指引</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">行為模式探索</span>
+                <span class="service-subtier-item__desc">找出那些不斷重複的行為背後的深層設計</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">反覆困境根源</span>
+                <span class="service-subtier-item__desc">看清為什麼同樣的問題一直出現，才能真正解決</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">清晰決策指引</span>
+                <span class="service-subtier-item__desc">結合命理與塔羅，幫你做出真正屬於自己的選擇</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
+
     </div>
   </div>
 </section>

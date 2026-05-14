@@ -96,6 +96,16 @@
         <a href="#booking" class="btn btn--primary" style="margin-top:24px;">
           與 Bryony 預約 <i class="fa-solid fa-arrow-right"></i>
         </a>
+        <!-- 公式照 — 請將圖片放至 assets/images/teacher-bryony-formal.jpg -->
+        <div class="teacher-formal-wrap" style="margin-top:28px;">
+          <img src="assets/images/teacher-bryony-formal.jpg" alt="Bryony 公式照"
+               class="teacher-formal-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="teacher-formal-placeholder" style="display:none;">
+            <i class="fa-solid fa-image"></i>
+            <span>公式照（請上傳 teacher-bryony-formal.jpg）</span>
+          </div>
+        </div>
       </div>
       <div class="reveal">
         <p class="section__eyebrow" style="margin-bottom:14px;">專業資歷</p>
@@ -143,7 +153,9 @@
       <p class="section__subtitle">陪你整理人生、找回方向，讓選擇不再讓你迷失。</p>
     </div>
     <div class="teacher-services__grid">
-      <article class="card reveal">
+
+      <!-- 入口一：職涯諮詢 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-compass card__icon"></i></div>
         <h3 class="card__title">職涯諮詢</h3>
         <p class="card__text">陪你探索職涯方向，理解自己的優勢與價值，找到真正讓你有踏實感的前進路徑。</p>
@@ -152,9 +164,40 @@
           <li>轉職或轉換跑道</li>
           <li>職場困境釐清</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">職涯方向探索</span>
+                <span class="service-subtier-item__desc">找出真正符合你的優勢與熱情的職涯路徑</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">轉職 / 轉換跑道</span>
+                <span class="service-subtier-item__desc">評估轉換的可行性，制定清晰的行動計畫</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">職場困境釐清</span>
+                <span class="service-subtier-item__desc">看清當前困境的根源，找出真正可行的改變方向</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口二：人際關係整理 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-people-group card__icon"></i></div>
         <h3 class="card__title">人際關係整理</h3>
         <p class="card__text">協助你整理複雜的人際狀態，看清關係模式，找到讓自己舒適且健康的相處方式。</p>
@@ -163,9 +206,40 @@
           <li>家庭關係整理</li>
           <li>友誼與職場關係</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">關係模式探索</span>
+                <span class="service-subtier-item__desc">看清自己在關係中反覆出現的模式與根源</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">家庭關係整理</span>
+                <span class="service-subtier-item__desc">整理原生家庭的影響，找到更自在的家庭相處模式</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">友誼與職場關係</span>
+                <span class="service-subtier-item__desc">處理友情或職場人際困境，找到健康的互動邊界</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
-      <article class="card reveal">
+
+      <!-- 入口三：個人成長陪伴 -->
+      <article class="card reveal service-card-accordion">
         <div class="card__icon-wrap"><i class="fa-solid fa-seedling card__icon"></i></div>
         <h3 class="card__title">個人成長陪伴</h3>
         <p class="card__text">在長期的陪伴中，幫你持續整理、釐清、並看見自己的成長與改變。</p>
@@ -174,8 +248,38 @@
           <li>人生階段整理</li>
           <li>目標設定與追蹤</li>
         </ul>
-        <a href="#booking" class="card__link">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="service-card-toggle" onclick="this.closest('.service-card-accordion').classList.toggle('is-open')">
+          <span class="service-card-toggle-label">展開服務選項</span>
+          <i class="fa-solid fa-chevron-down service-card-chevron"></i>
+        </div>
+        <div class="service-card-subtiers">
+          <ul class="service-subtier-list">
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">定期陪伴諮詢</span>
+                <span class="service-subtier-item__desc">持續性的陪伴，讓改變有空間慢慢發生</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">人生階段整理</span>
+                <span class="service-subtier-item__desc">在重要轉折點整理自己，清楚看見下一個階段</span>
+              </div>
+            </li>
+            <li class="service-subtier-item">
+              <span class="service-subtier-item__dot"></span>
+              <div class="service-subtier-item__content">
+                <span class="service-subtier-item__name">目標設定與追蹤</span>
+                <span class="service-subtier-item__desc">設定真正符合內在的目標，並持續追蹤落地</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <a href="#booking" class="card__link" style="margin-top:12px;">立即預約 <i class="fa-solid fa-arrow-right"></i></a>
       </article>
+
     </div>
   </div>
 </section>
