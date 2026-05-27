@@ -35,7 +35,10 @@
   <div class="container teacher-hero__container">
     <div class="teacher-hero__photo-wrap">
       <div class="teacher-hero__glow star-glow-lg"></div>
-      <div class="teacher-hero__photo-placeholder">
+      <img src="assets/images/teacher-ellie.jpg" alt="Ellie"
+           class="teacher-hero__photo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="teacher-hero__photo-placeholder" style="display:none;">
         <i class="fa-solid fa-magnifying-glass"></i>
         <span>Ellie</span>
       </div>
@@ -98,12 +101,12 @@
         </a>
         <!-- 公式照 — 請將圖片放至 assets/images/teacher-ellie-formal.jpg -->
         <div class="teacher-formal-wrap" style="margin-top:28px;">
-          <img src="assets/images/teacher-ellie-formal.jpg" alt="Ellie 公式照"
+          <img src="assets/images/teacher-ellie.jpg" alt="Ellie 公式照"
                class="teacher-formal-photo"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="teacher-formal-placeholder" style="display:none;">
             <i class="fa-solid fa-image"></i>
-            <span>公式照（請上傳 teacher-ellie-formal.jpg）</span>
+            <span>Ellie</span>
           </div>
         </div>
       </div>
