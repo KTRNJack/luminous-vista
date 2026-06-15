@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-白光流域 Luminous Vista — a static website for a spiritual healing / tarot business. Deployed to GitHub Pages at `https://KTRNJack.github.io/luminous-vista/`. No build step, no package manager, no framework — all files are plain HTML/CSS/JS.
+白光流域 Luminous Vista — a static website for a spiritual healing / tarot business. Deployed to Netlify at `https://luminous-vista.netlify.app/`. No build step, no package manager, no framework — all files are plain HTML/CSS/JS.
 
 ## Development
 
