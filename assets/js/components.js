@@ -15,6 +15,7 @@ const PAGES = [
 const PRODUCT_PAGES = [
   { href: 'products-spiritual.html',  label: '靈性服務' },
   { href: 'products-magic.html',      label: '魔法商品' },
+  { href: 'magic-candle-series.html', label: '魔法蠟燭系列' },
 ];
 
 
